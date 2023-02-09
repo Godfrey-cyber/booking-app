@@ -1,13 +1,293 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .active {
+    @apply active:bg-white focus:outline-none active:border active:rounded-3xl text-amber-400;
+  }
+
+  .searchitem {
+    @apply flex items-center space-x-2 gap-[10px] cursor-pointer ;
+  }
+
+  .input {
+    @apply border-0 outline-0;
+  }
+
+  .search {
+    @apply text-red-400 cursor-pointer;
+  }
+
+  .search-date {
+    @apply text-gray-600 font-semibold font-["Montserrat"] text-sm cursor-pointer border-0 outline-0;
+  }
+
+  .counter {
+    @apply w-[30px] h-[30px] border border-red-400 cursor-pointer bg-white text-red-400;
+  }
+  .headerContainer {
+    @apply w-full max-w-[1024px] mt-[20px] mb-[100px];
+  }
+  .listMode {
+    @apply mt-[20px] mx-0 mb-[20px];
+  }
+  .featured {
+    @apply mt-[50px] flex flex-col items-center gap-[30px];
+  }
+
+  /* DESTINATION */
+  .header_span {
+    @apply group-hover:text-amber-400 transition delay-150 font-['Montserrat'] text-lg font-semibold
+  }
+  .navbar_btn {
+    @apply bg-white font-['Montserrat'] my-2 text-sm font-semibold text-red-500  rounded cursor-pointer hover:bg-red-200 transition delay-300 py-2 px-4
+  }
+  /* MAIL_LIST */
+
+  .mail {
+    @apply w-full flex flex-col mt-[50px] bg-red-400 text-white font-['Montserrat'] font-bold items-center text-lg gap-[20px] p-[50px];
+  }
+  .input {
+    @apply bg-white rounded w-[300px] h-[34px] p-[10px] border-0 mr-[10px] cursor-pointer placeholder:text-gray-600 placeholder:text-sm;
+  }
+  .mail_title {
+    @apply text-white font-['Montserrat'] font-extrabold text-5xl;
+  }
+  .subscribe {
+    @apply bg-white rounded text-red-400 font-bold px-4 py-1 border-0 hover:bg-gray-300 transition-all delay-300 text-lg font-['Montserrat'];
+  }
+
+  /* FOOTER */
+  .footer {
+    @apply w-full max-w-[1024px] text-sm;
+  }
+  .fLists {
+    @apply w-full flex justify-between mb-[50px];
+  }
+  .fList {
+    @apply p-0;
+  }
+  .listItem {
+    @apply mb-[10px] text-red-400 cursor-pointer hover:text-red-600 hover:underline transition-all delay-300 font-semibold text-sm font-['Montserrat'];
+  }
+  /* LIST */
+  .listContainer {
+    @apply px-24 mx-auto bg-gray-50;
+  }
+  .search {
+    @apply text-gray-300 text-sm font-['Montserrat'] font-semibold cursor-pointer z-40;
+  }
+  .lsItem {
+    @apply flex flex-col space-y-3 justify-center mt-[20px];
+  }
+  .listWrapper {
+    @apply w-full max-w-[1024px] grid grid-cols-12 gap-8 my-14;
+  }
+  .listSearch {
+    @apply bg-red-400 p-[15px] border h-max rounded-md sticky top-[10px] flex flex-col sm:col-span-12 md:col-span-4;
+  }
+  .listResult {
+    @apply flex flex-col sm:col-span-12 md:col-span-8 rounded-md;
+  }
+  .lsTitle {
+    @apply font-['Montserrat'] text-gray-500 mb-[10px];
+  }
+  .span-search {
+    @apply h-[35px] p-[5px] bg-white flex items-center cursor-pointer font-['Montserrat'];
+  }
+  .checkIn {
+    @apply h-[35px] border-0 p-[5px] bg-white flex cursor-pointer text-gray-500 font-semibold font-['Montserrat'] rounded-sm;
+  }
+  .label {
+    @apply font-['Montserrat'] text-sm font-bold text-white;
+  }
+  .lsOptionItem {
+    @apply flex justify-between items-center mb-[10px] text-white text-sm  font-['Montserrat'] font-semibold;
+  }
+  .max-options {
+    @apply flex justify-between space-x-2 items-center mb-[10px] text-white text-sm  font-['Montserrat'] font-semibold;
+  }
+  .optionInput {
+    @apply w-[50px] p-1 rounded-sm text-sm text-gray-400 focus:outline-none border-none;
+  }
+  .lsOptions {
+    @apply p-[10px];
+  }
+  .searchBtn {
+    @apply p-[6px] bg-white text-red-400 border-none w-full font-['Montserrat'] font-bold text-lg cursor-pointer rounded-sm hover:bg-red-200 transition-all delay-300;
+  }
+  /* SEARCH_COMPONENT */
+  .searchItem {
+    @apply border rounded-[5px] border-gray-200 flex justify-between gap-[20px] mb-[20px];
+  }
+  .img {
+    @apply w-[200px] h-[200px] rounded-tl-[5px] rounded-bl-[5px]
+  }
+  .siDesc {
+    @apply flex flex-col space-y-2 font-['Montserrat'] 
+  }
+  .details {
+    @apply flex-1 text-[12px] font-['Montserrat'] flex justify-between flex-col
+  }
+  .siTitle {
+    @apply text-[20px] text-red-400 font-bold
+  }
+  .distance {
+    @apply text-[14px] text-gray-500 font-semibold
+  }
+  .taxiOp {
+    @apply bg-amber-400 hover:font-extrabold cursor-pointer text-white max-w-max text-[12px] p-1 rounded-[5px] font-bold 
+  }
+  .subTitle {
+    @apply text-[12px] font-extrabold
+  }
+  .features {
+    @apply text-[14px] font-extrabold
+  }
+  .cancelation {
+    @apply text-[14px] text-red-400 font-extrabold hover:underline cursor-pointer
+  }
+  .cancelLater {
+    @apply text-sm font-bold text-red-400
+  }
+  /* DETAILS */
+  .rating {
+    @apply flex justify-between p-2 space-x-2 items-center
+  }
+  .excellent {
+    @apply font-bold 
+  }
+  .btn-rating {
+    @apply bg-red-400 font-bold text-white border-none rounded-sm p-1
+  }
+  .details-text {
+    @apply flex flex-col gap-[5px] items-center
+  }
+  .price {
+    @apply text-[24px]
+  }
+  .tax {
+    @apply text-[14px] text-gray-600
+  }
+  .btn-detail {
+    @apply bg-red-400 text-white font-bold py-1 px-2 border-none cursor-pointer rounded-[5px]
+  }
+  /* HOTEL */
+  .hotelimg_wrapper {
+    @apply w-[33%] h-[300px]
+  }
+  .hotel_images {
+    @apply flex flex-wrap justify-between
+  }
+  .hotel_img {
+    @apply w-full h-[98%]
+  }
+  .hotel_title {
+    @apply text-[24px] font-extrabold
+  }
+  .small-title {
+    @apply text-[20px] font-bold
+  }
+  .hotel_container {
+    @apply flex justify-center mt-[20px] font-['Montserrat'] flex-col items-center
+  }
+  .hotel_wrapper {
+    @apply w-full max-w-[1024px] flex flex-col gap-[10px] relative
+  }
+  .hotel_address {
+    @apply text-[12px] flex items-center gap-[10px]
+  }
+  .address {
+    @apply text-lg font-semibold font-["Montserrat"] 
+  }
+  .hotel_location {
+    @apply text-red-400 font-bold
+  }
+  .hotel_price {
+    @apply text-green-400 font-semibold 
+  }
+  .book_now {
+  @apply absolute top-[10px] right-[0px] border-none px-[20px] py-[10px] hover:bg-red-500 transition delay-200 cursor-pointer bg-red-400 text-white font-bold rounded-[5px]
+  }
+  .hotel_details {
+    @apply justify-between gap-[20px] mt-[20px] grid grid-cols-12 
+  }
+  .hotel_text {
+    @apply col-span-12 md:col-span-8
+  }
+  .hotel_price-detail {
+    @apply col-span-12 md:col-span-4 p-[20px] flex flex-col gap-[20px] bg-red-100 rounded-md
+  }
+  .hotel_desc {
+    @apply text-[16px] mt-[20px] 
+  }
+  .price_title {
+    @apply text-[18px] text-[#555]
+  }
+  .price_span {
+    @apply text-[14px] font-extrabold
+  }
+  .price_btn {
+    @apply border-none py-[10px] px-[20px] bg-red-400 hover:bg-red-500 transition delay-200 text-white font-bold cursor-pointer rounded-[5px]
+  }
+  /* SLIDER */
+  .slider {
+    @apply sticky z-10 top-0 left-0 w-screen h-screen bg-red-50 flex items-center 
+  }
+  .slider_wrapper {
+    @apply w-full h-full flex items-center justify-center 
+  }
+  .slider_img {
+    @apply w-[80%] h-[80vh] 
+  }
+  .close {
+    @apply absolute top-[20px] right-[20px] text-[30px] text-red-300 cursor-pointer
+  }
+  .arrow {
+    @apply m-[20px] text-[50px] text-gray-400 cursor-pointer
+  }
+  .login_input {
+    @apply h-[40px] p-[10px] rounded-sm
+  }
+  .login_button {
+    @apply border-0 rounded-md px-[20px] py-[10px] bg-red-300 text-white font-bold cursor-pointer 
+  }
+  .login {
+    @apply bg-gray-100 w-screen h-screen flex flex-col items-center
+  }
+  .login_container {
+    @apply  my-auto bg-red-400 h-auto w-[350px] p-4 rounded-md flex flex-col items-center space-y-3
+  }
+  /* //RESERVE */
+  .reserve_modal {
+    @apply w-screen h-screen fixed top-0 left-0 bottom-0 right-0 flex items-center justify-center bg-red-100 
+  }
+  .reserve_container {
+    @apply relative top-auto left-auto min-h-[450px] max-h-[600px] scroll-smooth overflow-y-auto bg-white p-6 w-1/2 flex flex-col space-y-2 font-['Montserrat']
+  }
+  .close_reserve {
+    @apply text-red-300 cursor-pointer absolute top-5 right-5 p-3
+  }
+  .select_rooms {
+    @apply text-2xl font-bold font-['Montserrat'] text-gray-400
+  }
+  .room_item {
+    @apply flex items-center gap-[50px] cursor-pointer
+  }
+  .room_info {
+    @apply flex flex-col space-y-2
+  }
+  .room_title {
+    @apply font-bold font-['Montserrat'] text-base my-1 text-red-500
+  }
+  .room {
+    @apply flex items-center space-x-3
+  }
+  .select_room {
+    @apply flex flex-col space-y-1 items-center
+  }
+  .check_box {
+    @apply focus:outline-none checked:bg-red-400 p-1 bg-red-400 
+  }
 }
