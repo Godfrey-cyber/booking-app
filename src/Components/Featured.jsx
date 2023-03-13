@@ -20,7 +20,7 @@ const Featured = () => {
         </div>
         <div className="grid grid-cols-12 gap-6 my-14">
         {data.map((city, i) => (
-            <div key={city.id} className="flex flex-col sm:col-span-6 col-span-12 group xl:col-span-4 items-center align-center h-80 relative hover:animate-pulse transition delay-200 cursor-pointer w-auto rounded-t-md" key={city._id}>
+            <div key={city._id} className="flex flex-col sm:col-span-6 col-span-12 group xl:col-span-4 items-center align-center h-80 relative hover:animate-pulse transition delay-200 cursor-pointer w-auto rounded-t-md" key={city._id}>
                 <span className="bg-teal-400 py-1 px-3 rounded-xl text-white text-sm group-hover:bg-red-600 transition delay-200 absolute top-6 left-6">$ {city.cheapestPrice} / Night</span>
                 <img src={cityData[0].image} className="w-full h-3/5 object-fit rounded-t-md" alt="helloplace" />
                 <div className="flex flex-col space-y-2 rounded-b-md bg-white shadow hover:shadow-gray-200 w-full h-2/5 py-2 px-4">
